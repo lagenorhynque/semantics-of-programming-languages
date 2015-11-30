@@ -16,7 +16,7 @@ instance Show Nat' where
 
 plus' : Nat' -> Nat' -> Nat'
 plus' Z'     n = n
-plus' (S' n) m = plus' n (S' m)
+plus' (S' n) m = S' (plus' n m)
 
 times' : Nat' -> Nat' -> Nat'
 times' Z'     _ = Z'

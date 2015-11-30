@@ -5,7 +5,7 @@ data Nat = Z | S Nat deriving (Eq, Show)
 infixl 6 `plus`
 plus :: Nat -> Nat -> Nat
 Z   `plus` n = n
-S n `plus` m = n `plus` S m
+S n `plus` m = S (n `plus` m)
 
 infixl 7 `times`
 times :: Nat -> Nat -> Nat
