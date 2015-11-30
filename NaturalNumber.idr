@@ -1,6 +1,8 @@
 module NaturalNumber
 
-data Nat' = Z' | S' Nat'
+data Nat' : Type where
+  Z' : Nat'
+  S' : Nat' -> Nat'
 
 instance Eq Nat' where
   Z'     == Z'     = True
