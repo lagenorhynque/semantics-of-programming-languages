@@ -1,0 +1,31 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# CoffeeScript
+compiled/
+
+# Python
+__pycache__/
+.pydevproject
+
+# Haskell
+*.hi
+*.o
+.dist-buildwrapper/
+
+# Idris
+*.ibc
+
+# Erlang
+*.beam
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# others
+*.exe
