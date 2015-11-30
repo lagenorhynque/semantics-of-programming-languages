@@ -12,13 +12,13 @@ times :: Nat -> Nat -> Nat
 Z   `times` _ = Z
 S n `times` m = n `times` m `plus` m
 
-toNat :: Int -> Nat
+toNat :: Int -> Maybe Nat
 toNat = count Z
   where
-    count acc 0 = acc
+    count acc 0 = Just acc
     count acc n
       | n > 0     = count (S acc) (n - 1)
-      | otherwise = error "undefined"
+      | otherwise = Nothing
 
 toInt :: Nat -> Int
 toInt = count 0
