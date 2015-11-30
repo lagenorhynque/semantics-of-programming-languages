@@ -36,6 +36,3 @@ toInt = count 0
   where
     count acc Z'     = acc
     count acc (S' n) = count (acc + 1) n
-
-main : IO ()
-main = putStrLn "Hello, world!"
