@@ -2,13 +2,13 @@ module NatTheorems
 
 import NaturalNumber
 
-plusCommutativeZ : plus' Z' m = plus' m Z'
+plusCommutativeZ : m = plus' m Z'
 plusCommutativeZ {m = Z'}     = Refl
 plusCommutativeZ {m = (S' k)} =
   let rec = plusCommutativeZ {m = k} in
   rewrite rec in Refl
 
-plusCommutativeS : (k : Nat') -> (m : Nat') -> plus' (S' m) k = plus' m (S' k)
+plusCommutativeS : (k : Nat') -> (m : Nat') -> S' (plus' m k) = plus' m (S' k)
 plusCommutativeS k Z'     = Refl
 plusCommutativeS k (S' j) =
   let rec = plusCommutativeS k j in
