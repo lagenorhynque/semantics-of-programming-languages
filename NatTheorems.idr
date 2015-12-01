@@ -18,7 +18,8 @@ total
 plusCommutative' : (n : Nat') -> (m : Nat') -> plus' n m = plus' m n
 plusCommutative' Z'     m = plusCommutativeZ
 plusCommutative' (S' k) m =
-  rewrite plusCommutative' k m in plusCommutativeS k m
+  let rec = plusCommutative' k m in
+  rewrite rec in plusCommutativeS k m
 
 total
 plusAssociative' : (n : Nat') -> (m : Nat') -> (p : Nat') -> plus' n (plus' m p) = plus' (plus' n m) p
