@@ -30,6 +30,6 @@ main :: IO ()
 main = do
   putStrLn $ show a ++ " plus " ++ show b ++ " is " ++ show (a `plus` b)
   putStrLn $ show a ++ " times " ++ show b ++ " is " ++ show (a `times` b)
-    where
-      a = S (S Z)
-      b = S (S (S Z))
+  where
+    a = S (S Z)
+    b = S (S (S Z))
