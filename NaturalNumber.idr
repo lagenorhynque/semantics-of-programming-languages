@@ -1,23 +1,28 @@
 module NaturalNumber
 
+%access public export
+
+-- 自然数(natural number)の定義
 data Nat' : Type where
   Z' : Nat'
   S' : Nat' -> Nat'
 
-instance Eq Nat' where
+Eq Nat' where
   Z'     == Z'     = True
   (S' n) == (S' m) = n == m
   _      == _      = False
 
-instance Show Nat' where
+Show Nat' where
   show Z'      = "Z'"
   show (S' Z') = "S' Z'"
   show (S' n)  = "S' (" ++ show n ++ ")"
 
+-- 加法(addition)の定義
 plus' : Nat' -> Nat' -> Nat'
 plus' Z'     n = n
 plus' (S' n) m = S' (plus' n m)
 
+-- 乗法(multiplication)の定義
 times' : Nat' -> Nat' -> Nat'
 times' Z'     _ = Z'
 times' (S' n) m = plus' (times' n m) m
