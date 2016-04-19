@@ -7,10 +7,10 @@ plus :: Nat -> Nat -> Nat
 Z   `plus` n = n
 S n `plus` m = S (n `plus` m)
 
-infixl 7 `times`
-times :: Nat -> Nat -> Nat
-Z   `times` _ = Z
-S n `times` m = n `times` m `plus` m
+infixl 7 `mult`
+mult :: Nat -> Nat -> Nat
+Z   `mult` _ = Z
+S n `mult` m = m `plus` n `mult` m
 
 toNat :: Int -> Maybe Nat
 toNat = count Z
@@ -29,7 +29,7 @@ toInt = count 0
 main :: IO ()
 main = do
   putStrLn $ show a ++ " plus " ++ show b ++ " is " ++ show (a `plus` b)
-  putStrLn $ show a ++ " times " ++ show b ++ " is " ++ show (a `times` b)
+  putStrLn $ show a ++ " mult " ++ show b ++ " is " ++ show (a `mult` b)
   where
     a = S (S Z)
     b = S (S (S Z))

@@ -23,9 +23,9 @@ plus' Z'     n = n
 plus' (S' n) m = S' (plus' n m)
 
 -- 乗法(multiplication)の定義
-times' : Nat' -> Nat' -> Nat'
-times' Z'     _ = Z'
-times' (S' n) m = plus' (times' n m) m
+mult' : Nat' -> Nat' -> Nat'
+mult' Z'     _ = Z'
+mult' (S' n) m = plus' m (mult' n m)
 
 toNat' : Integer -> Maybe Nat'
 toNat' = count Z'
