@@ -36,8 +36,8 @@ toNat' = count Z'
         then count (S' acc) (n - 1)
         else Nothing
 
-toInt :  Nat' -> Integer
-toInt = count 0
+toInteger :  Nat' -> Integer
+toInteger = count 0
   where
     count acc Z'     = acc
     count acc (S' n) = count (acc + 1) n

@@ -12,7 +12,7 @@ mult :: Nat -> Nat -> Nat
 Z   `mult` _ = Z
 S n `mult` m = m `plus` n `mult` m
 
-toNat :: Int -> Maybe Nat
+toNat :: Integer -> Maybe Nat
 toNat = count Z
   where
     count acc 0 = Just acc
@@ -20,8 +20,8 @@ toNat = count Z
       | n > 0     = count (S acc) (n - 1)
       | otherwise = Nothing
 
-toInt :: Nat -> Int
-toInt = count 0
+toInteger' :: Nat -> Integer
+toInteger' = count 0
   where
     count acc Z     = acc
     count acc (S n) = count (acc + 1) n
