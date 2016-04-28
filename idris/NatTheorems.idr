@@ -29,3 +29,16 @@ plusAssociative' Z'     m p = Refl
 plusAssociative' (S' k) m p =
   let rec = plusAssociative' k m p in
   rewrite rec in Refl
+
+total
+plusIdentity : (n : Nat') -> (plus' Z' n = n, plus' n Z' = n)
+plusIdentity n = (Refl, plusCommutative' n Z')
+
+multCommutative' : (n : Nat') -> (m : Nat') -> mult' n m = mult' m n
+-- multCommutative n m =
+
+multAssociative' : (n : Nat') -> (m : Nat') -> (p : Nat') -> mult' n (mult' m p) = mult' (mult' m n) p
+-- multAssociative n m p =
+
+multIdentity : (n : Nat') -> (mult' (S' Z') n = n, mult' n (S' Z') = n)
+-- multIdentity n =
